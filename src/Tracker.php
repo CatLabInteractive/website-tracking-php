@@ -199,6 +199,24 @@ class Tracker
     }
 
     /**
+     * @param $event
+     * @param $properties
+     * @param false $async
+     * @return mixed
+     */
+    public function custom($event, $properties, $async = false)
+    {
+        $payload = $this->payload->getCustom($event, $properties);
+
+        return $this->client->{$async === true ? 'requestAsync' : 'request'}('POST', 'track', [
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ],
+            'body' => json_encode($payload, JSON_UNESCAPED_UNICODE)
+        ]);
+    }
+
+    /**
      * @param string $email
      * @return boolean
      */
