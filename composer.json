@@ -1,6 +1,7 @@
 {
     "name": "moosend/website-tracking",
     "description": "By installing the Moosend PHP Tracking library you are can track page views, product views, add to cart events and successful purchases. You can later use these details to segment your user base, run automations, check how successful your latest promo has been and how many conversions your landing page has led to.",
+    "version": "1.0.0",
     "type": "lib",
     "license": "MIT",
     "autoload": {
@@ -18,7 +19,7 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "^6.0 || ^7.0"
     },
     "require-dev": {
         "phpspec/phpspec": "~3.0",
